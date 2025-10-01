@@ -1,10 +1,16 @@
+/* --- Regla Global de Box-Sizing --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
 body {
-    /* Usando una fuente más estilizada y un fondo más claro y elegante */
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(to right, #D2B48C, #F5ECCE); /* Gradiente de Tan a Beige claro */
-    color: #4A3728; /* Un marrón oscuro para alta legibilidad */
+    background: linear-gradient(to right, #D2B48C, #F5ECCE);
+    color: #4A3728;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,12 +21,12 @@ body {
 
 .container {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.15); /* Un fondo blanco translúcido, más sutil */
+    background-color: rgba(255, 255, 255, 0.15);
     padding: 20px 40px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     max-width: 500px;
-    color: #4A3728; /* Texto oscuro también dentro del contenedor para consistencia */
+    color: #4A3728;
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -35,11 +41,13 @@ body {
     left: 20px;
     font-size: 2em;
     text-decoration: none;
-    color: #4A3728; /* Coincide con el color del cuerpo */
+    color: #4A3728;
 }
 
 .button {
-    background-color: #8B5A2B; /* Un marrón más cálido y menos rojizo */
+    display: inline-block;
+    width: auto;
+    background-color: #8B5A2B;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -50,7 +58,7 @@ body {
     transition: background-color 0.3s, transform 0.2s;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.5px; /* Un poco de espacio entre letras */
+    letter-spacing: 0.5px;
 }
 
 .button:hover {
@@ -58,40 +66,25 @@ body {
     transform: translateY(-2px);
 }
 
-.carta {
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo de carta semi-transparente */
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.carta h2 {
-    color: #8B5A2B; /* Título de la carta a juego con los botones */
-    margin-top: 0;
-}
-
-/* Estilo del enlace de WhatsApp. Ahora con texto oscuro para contraste */
+/* Estilo del enlace de WhatsApp. */
 .whatsapp-link {
     display: block;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 5px;
-    color: #4A3728; /* Mismo color que el texto principal */
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #25D366;
+    border-radius: 8px;
+    color: white;
     text-decoration: none;
     transition: background-color 0.3s;
     font-weight: bold;
+    text-align: center;
 }
 
 .whatsapp-link:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #1DAA54;
 }
 
-/* --- Estilos para las Cartas de Evento --- */
-
+/* --- Estilos para las Cartas (Animación) --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -103,17 +96,17 @@ body {
     }
 }
 
+/* --- Estilos para las Cartas de Evento --- */
 .carta-evento {
-    background-color: #FDF5E6; /* Un color papel antiguo */
+    background-color: #FDF5E6;
     color: #4A3728;
-    border: 1px solid #D2B48C;
+    border: 4px solid #D2B48C;
     border-radius: 10px;
     margin-top: 20px;
     padding: 25px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
     animation: fadeIn 0.5s ease-out;
     text-align: left;
-    max-width: 90%; /* Asegura que no sea demasiado ancha en pantallas grandes */
 }
 
 .carta-evento h2 {
@@ -122,7 +115,7 @@ body {
     margin-top: 0;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #D2B48C; /* Línea divisoria */
+    border-bottom: 2px solid #D2B48C;
 }
 
 .carta-evento p {
@@ -143,48 +136,79 @@ body {
 }
 
 .evento-efecto.positivo {
-    background-color: #E6F4EA; /* Verde muy claro */
-    border-left: 5px solid #5CB85C; /* Borde verde */
+    background-color: #E6F4EA;
+    border-left: 5px solid #5CB85C;
     color: #3D8B3D;
 }
 
 .evento-efecto.negativo {
-    background-color: #FDEDED; /* Rojo muy claro */
-    border-left: 5px solid #D9534F; /* Borde rojo */
+    background-color: #FDEDED;
+    border-left: 5px solid #D9534F;
     color: #B94A48;
 }
 
-/* --- Media Query para Diseño Adaptable (Móviles) --- */
+/* --- Estilos para las Cartas de Empresa --- */
+.carta-empresa {
+    background: linear-gradient(to bottom, #ffffff, #f7f9fb);
+    color: #333;
+    border: 4px solid #D2B48C; /* Borde hermanado con carta-evento */
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    animation: fadeIn 0.5s ease-out;
+    text-align: left;
+}
 
+.carta-empresa h2 {
+    font-size: 1.5em;
+    color: #8B5A2B; /* Color de título hermanado con la paleta */
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #8B5A2B; /* Línea inferior hermanada con la paleta */
+}
+
+.carta-empresa p {
+    margin: 12px 0;
+    line-height: 1.7;
+    color: #555;
+}
+
+.carta-empresa p strong {
+    color: #34495e;
+}
+
+/* --- Media Query para Diseño Adaptable (Móviles) --- */
 @media (max-width: 600px) {
     body {
-        /* Movemos el contenido hacia arriba en lugar de centrarlo verticalmente */
         justify-content: flex-start;
-        padding-top: 5vh; /* Un 5% del alto de la pantalla como margen superior */
+        padding-top: 5vh;
     }
 
     .container {
-        /* Hacemos el contenedor más ancho y con menos padding horizontal */
-        max-width: 90%;
-        padding-left: 20px;
-        padding-right: 20px;
+        max-width: 95%;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .logo {
-        /* Reducimos el tamaño del logo en móviles */
         width: 100px;
     }
 
     .button {
-        /* Hacemos que los botones se apilen verticalmente */
         display: block;
-        width: 90%; /* Ancho relativo al contenedor */
-        margin: 15px auto; /* Espaciado vertical y centrado horizontal */
+        width: 100%;
+        margin: 15px 0;
     }
 
     .home-button {
-        /* Ajustamos la posición del botón de inicio */
         top: 15px;
         left: 15px;
+    }
+
+    .carta-evento,
+    .carta-empresa {
+        padding: 20px;
     }
 }

@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mostrarEmpresaAleatoria() {
         empresaActual = empresas[Math.floor(Math.random() * empresas.length)];
+        // Usamos la nueva clase "carta-empresa" para aplicar los estilos correctos.
         cartaContainer.innerHTML = `
-            <div class="carta">
+            <div class="carta-empresa">
                 <h2>${empresaActual.nombre}</h2>
                 <p>${empresaActual.actividad}</p>
                 <p><strong>Detalle:</strong> ${empresaActual.detalle}</p>
@@ -34,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     nuevaEmpresaBtn.addEventListener('click', mostrarEmpresaAleatoria);
 
     compartirBtn.addEventListener('click', () => {
-        const cartaElement = cartaContainer.querySelector('.carta');
+        // Actualizamos el selector a la nueva clase.
+        const cartaElement = cartaContainer.querySelector('.carta-empresa');
         if (!cartaElement || !empresaActual) {
             alert('Primero debes generar una empresa para compartir.');
             return;
@@ -81,6 +83,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Aseguramos que la página empieza limpia.
     cartaContainer.innerHTML = '';
     enlaceContainer.innerHTML = '';
-
-    // (No se llama a mostrarEmpresaAleatoria() al cargar la página)
 });
