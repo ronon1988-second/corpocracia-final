@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+    /* Usando una fuente más estilizada y un fondo más claro y elegante */
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to right, #D2B48C, #F5ECCE); /* Gradiente de Tan a Beige claro */
+    color: #4A3728; /* Un marrón oscuro para alta legibilidad */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.15); /* Un fondo blanco translúcido, más sutil */
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    color: #4A3728; /* Texto oscuro también dentro del contenedor para consistencia */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2em;
+    text-decoration: none;
+    color: #4A3728; /* Coincide con el color del cuerpo */
+}
+
+.button {
+    background-color: #8B5A2B; /* Un marrón más cálido y menos rojizo */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px; /* Un poco de espacio entre letras */
+}
+
+.button:hover {
+    background-color: #A06B3E;
+    transform: translateY(-2px);
+}
+
+.carta {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo de carta semi-transparente */
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carta h2 {
+    color: #8B5A2B; /* Título de la carta a juego con los botones */
+    margin-top: 0;
+}
+
+/* Estilo del enlace de WhatsApp. Ahora con texto oscuro para contraste */
+.whatsapp-link {
+    display: block;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    color: #4A3728; /* Mismo color que el texto principal */
+    text-decoration: none;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.whatsapp-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
