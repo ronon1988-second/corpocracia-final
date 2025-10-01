@@ -96,10 +96,11 @@ body {
     }
 }
 
-/* --- Estilos para las Cartas de Evento --- */
-.carta-evento {
-    background-color: #FDF5E6;
-    color: #4A3728;
+/* --- Estilos Unificados para AMBAS Tarjetas --- */
+.carta-evento,
+.carta-empresa {
+    background-color: #FDF5E6; /* Color papel antiguo para ambas */
+    color: #4A3728; /* Color de texto principal para ambas */
     border: 4px solid #D2B48C;
     border-radius: 10px;
     margin-top: 20px;
@@ -109,7 +110,8 @@ body {
     text-align: left;
 }
 
-.carta-evento h2 {
+.carta-evento h2,
+.carta-empresa h2 {
     font-size: 1.4em;
     color: #8B5A2B;
     margin-top: 0;
@@ -118,9 +120,22 @@ body {
     border-bottom: 2px solid #D2B48C;
 }
 
-.carta-evento p {
+.carta-empresa h2 { /* Pequeño ajuste para el nombre de empresa */
+    font-size: 1.5em;
+}
+
+.carta-evento p,
+.carta-empresa p {
     margin: 10px 0;
     line-height: 1.6;
+}
+
+.carta-empresa p {
+    line-height: 1.7; /* Un poco más de espacio para legibilidad */
+}
+
+.carta-empresa p strong { /* Unificar el color del texto en negrita */
+    color: #8B5A2B;
 }
 
 .evento-descripcion {
@@ -145,38 +160,6 @@ body {
     background-color: #FDEDED;
     border-left: 5px solid #D9534F;
     color: #B94A48;
-}
-
-/* --- Estilos para las Cartas de Empresa --- */
-.carta-empresa {
-    background: linear-gradient(to bottom, #ffffff, #f7f9fb);
-    color: #333;
-    border: 4px solid #D2B48C; /* Borde hermanado con carta-evento */
-    border-radius: 10px;
-    margin-top: 20px;
-    padding: 25px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    animation: fadeIn 0.5s ease-out;
-    text-align: left;
-}
-
-.carta-empresa h2 {
-    font-size: 1.5em;
-    color: #8B5A2B; /* Color de título hermanado con la paleta */
-    margin-top: 0;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #8B5A2B; /* Línea inferior hermanada con la paleta */
-}
-
-.carta-empresa p {
-    margin: 12px 0;
-    line-height: 1.7;
-    color: #555;
-}
-
-.carta-empresa p strong {
-    color: #34495e;
 }
 
 /* --- Media Query para Diseño Adaptable (Móviles) --- */

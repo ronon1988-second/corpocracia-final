@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function mostrarEmpresaAleatoria() {
         empresaActual = empresas[Math.floor(Math.random() * empresas.length)];
-        // Usamos la nueva clase "carta-empresa" para aplicar los estilos correctos.
         cartaContainer.innerHTML = `
             <div class="carta-empresa">
                 <h2>${empresaActual.nombre}</h2>
@@ -29,13 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p><strong>Detalle:</strong> ${empresaActual.detalle}</p>
             </div>
         `;
-        enlaceContainer.innerHTML = ''; // Limpiamos el enlace al generar una nueva empresa
+        enlaceContainer.innerHTML = '';
     }
 
     nuevaEmpresaBtn.addEventListener('click', mostrarEmpresaAleatoria);
 
     compartirBtn.addEventListener('click', () => {
-        // Actualizamos el selector a la nueva clase.
         const cartaElement = cartaContainer.querySelector('.carta-empresa');
         if (!cartaElement || !empresaActual) {
             alert('Primero debes generar una empresa para compartir.');
@@ -44,7 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         enlaceContainer.innerHTML = '';
 
-        html2canvas(cartaElement, { scale: 2, useCORS: true }).then(canvas => {
+        // ¡AQUÍ LA MAGIA! Añadimos un color de fondo a la imagen generada.
+        html2canvas(cartaElement, { 
+            scale: 2, 
+            useCORS: true, 
+            backgroundColor: '#D2B48C' // Color de fondo del body
+        }).then(canvas => {
             canvas.toBlob(blob => {
                 if (!blob) {
                     compartirTextoWhatsApp();
@@ -79,8 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- Lógica Principal ---
-
-    // 1. Aseguramos que la página empieza limpia.
     cartaContainer.innerHTML = '';
     enlaceContainer.innerHTML = '';
 });
