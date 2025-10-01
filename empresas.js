@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         enlaceContainer.innerHTML = '';
 
-        // ¡AQUÍ LA MAGIA! Añadimos un color de fondo a la imagen generada.
+        // Forzamos un fondo sólido para evitar transparencias en la imagen compartida.
         html2canvas(cartaElement, { 
             scale: 2, 
             useCORS: true, 
-            backgroundColor: '#D2B48C' // Color de fondo del body
+            backgroundColor: '#D2B48C' // Color de fondo consistente con el estilo de la app.
         }).then(canvas => {
             canvas.toBlob(blob => {
                 if (!blob) {
