@@ -1,0 +1,212 @@
+[
+    {
+        "nombre": "1. Pico de Inflación",
+        "descripcion": "Los precios se disparan y el mercado se vuelve inestable. El efectivo pierde poder real de negociación.",
+        "negativo": "❌ Salud, Tecnología y Construcción deben pagar 1 ficha extra para participar.",
+        "positivo": "✅ Alimentación y Transporte pueden repetir una tirada fallida contra el Mercado (una vez por sector)."
+    },
+    {
+        "nombre": "2. Crisis de Infraestructura",
+        "descripcion": "Derrumbes, apagones y paros frenan la actividad estructural en todo el país.",
+        "negativo": "❌ Transporte, Energía y Construcción fallan automáticamente si pierden contra el Mercado.",
+        "positivo": "✅ Salud y Transporte, si ganan contra el Mercado, mantienen una ficha adicional aunque hayan perdido otras."
+    },
+    {
+        "nombre": "3. Desaceleración Global",
+        "descripcion": "La economía mundial se enfría y los sectores financieros pierden impulso.",
+        "negativo": "❌ Turismo, Alimentación y Energía: las licitaciones se resuelven con -1 en todas las tiradas.",
+        "positivo": "✅ Transporte y Construcción: si pierden contra el Mercado, no retiran fichas, pero tampoco ganan."
+    },
+    {
+        "nombre": "4. Tensión Internacional",
+        "descripcion": "Conflictos diplomáticos interrumpen acuerdos de cooperación y desarrollo.",
+        "negativo": "❌ Tecnología, Transporte y Medios no se resuelven si hay más de un jugador en el sector.",
+        "positivo": "✅ Alimentación y Energía tiran con +1 contra el Mercado."
+    },
+    {
+        "nombre": "5. Devaluación Repentina",
+        "descripcion": "Una caída brusca de la moneda genera pánico financiero e imprevisibilidad.",
+        "negativo": "❌ Tecnología, Turismo y Medios pierden 1 ficha incluso si ganan contra el Mercado.",
+        "positivo": "✅ Salud y Construcción, si ganan la inversión, recuperan 1 ficha de inversión adicional a su reserva."
+    },
+    {
+        "nombre": "6. Protestas Populares",
+        "descripcion": "Marchas masivas interrumpen el funcionamiento normal de servicios clave.",
+        "negativo": "❌ Salud, Transporte y Turismo no se resuelven este turno.",
+        "positivo": "✅ Alimentación y Educación: las fichas perdidas contra el Mercado vuelven a la reserva."
+    },
+    {
+        "nombre": "7. Especulación Salvaje",
+        "descripcion": "Un ciclo de rumores desata movimientos de inversión inestables.",
+        "negativo": "❌ Tecnología, Finanzas y Energía: si hay empate en licitación, nadie gana.",
+        "positivo": "✅ Construcción y Medios: cada dado en licitación puede relanzarse una vez."
+    },
+    {
+        "nombre": "8. Boom del Turismo Médico",
+        "descripcion": "Una ola de extranjeros llega por salud y ocio, incentivando el consumo local.",
+        "negativo": "❌ Educación, Finanzas y Construcción tiran con -1 contra el Mercado.",
+        "positivo": "✅ Salud y Turismo: si ganan, obtienen 1 ficha de inversión extra."
+    },
+    {
+        "nombre": "9. Caída de la Bolsa",
+        "descripcion": "Los mercados financieros colapsan tras una ola de pánico.",
+        "negativo": "❌ Medios, Construcción y Alimentación deben tirar contra el Mercado dos veces.",
+        "positivo": "✅ Tecnología y Energía: tiran con +1 en su primer intento."
+    },
+    {
+        "nombre": "10. Congelamiento de Tarifas",
+        "descripcion": "El gobierno frena los aumentos y recorta márgenes.",
+        "negativo": "❌ Energía, Transporte y Construcción: no otorgan ficha de Mercado, aunque ganen.",
+        "positivo": "✅ Transporte y Alimentación: quien tenga menos fichas en el sector gana licitación en empate."
+    },
+    {
+        "nombre": "11. Fuga de Cerebros",
+        "descripcion": "Profesionales altamente calificados emigran en masa.",
+        "negativo": "❌ Educación, Tecnología y Medios: las fichas ganadas este turno no se acumulan.",
+        "positivo": "✅ Construcción y Alimentación: las fichas perdidas contra el Mercado quedan “inactivas”."
+    },
+    {
+        "nombre": "12. Auditoría General",
+        "descripcion": "El Estado revisa operaciones sospechosas y aplica controles especiales.",
+        "negativo": "❌ Finanzas, Medios y Turismo: tiran dos veces contra el Mercado.",
+        "positivo": "✅ Educación y Energía: no tiran contra el Mercado este turno."
+    },
+    {
+        "nombre": "13. Pánico Colectivo",
+        "descripcion": "Una noticia viral frena decisiones de inversión y paraliza sectores.",
+        "negativo": "❌ Tecnología, Finanzas y Salud: no se puede colocar inversión.",
+        "positivo": "✅ Turismo y Construcción se resuelven antes del evento del próximo turno."
+    },
+    {
+        "nombre": "14. Cumbre Internacional",
+        "descripcion": "Tratados multilaterales priorizan sectores estratégicos.",
+        "negativo": "❌ Medios, Construcción y Alimentación: si hay más de un jugador, todas las fichas se pierden.",
+        "positivo": "✅ Tecnología y Energía: no sufren el evento global del próximo turno."
+    },
+    {
+        "nombre": "15. Desabastecimiento",
+        "descripcion": "La escasez de insumos afecta la producción.",
+        "negativo": "❌ Alimentación, Energía y Transporte: máximo 1 ficha por jugador.",
+        "positivo": "✅ Turismo y Finanzas: tiran con +1 en su primera tirada contra el Mercado."
+    },
+    {
+        "nombre": "16. Reforma Educativa",
+        "descripcion": "Cambios estructurales alteran el sistema con fuerte resistencia social.",
+        "negativo": "❌ Educación, Salud y Transporte: licitaciones con -1 en las tiradas.",
+        "positivo": "✅ Tecnología y Medios: si ganan contra el Mercado, ganan +1 Reputación."
+    },
+    {
+        "nombre": "17. Reducción del Gasto Público",
+        "descripcion": "El Estado recorta su participación en múltiples sectores.",
+        "negativo": "❌ Construcción, Educación y Salud: máximo 1 ficha por jugador.",
+        "positivo": "✅ Finanzas y Turismo: quien más invirtió gana licitación automáticamente."
+    },
+    {
+        "nombre": "18. Intervención del FMI",
+        "descripcion": "Ajustes forzados cambian las reglas de inversión.",
+        "negativo": "❌ Energía, Turismo y Medios: fichas ganadoras no cuentan para dominio.",
+        "positivo": "✅ Construcción y Finanzas: fichas perdidas contra el Mercado permanecen activas."
+    },
+    {
+        "nombre": "19. Festival de Inversiones",
+        "descripcion": "Un clima optimista empuja al capital a buscar sectores nuevos.",
+        "negativo": "❌ Salud, Alimentación y Turismo: deben resolver tirada contra el Mercado antes de licitación.",
+        "positivo": "✅ Tecnología y Educación: si ganan, reciben 1 ficha de inversión extra."
+    },
+    {
+        "nombre": "20. Crisis Habitacional",
+        "descripcion": "Falta de insumos y planificación frena la obra pública.",
+        "negativo": "❌ Construcción, Medios y Transporte: las fichas colocadas se pierden.",
+        "positivo": "✅ Salud y Educación: si ganan contra el Mercado, obtienen 1 Reputación extra (pero no dominan)."
+    },
+    {
+        "nombre": "21. Descontento Social",
+        "descripcion": "La población castiga sectores con privilegios desmedidos.",
+        "negativo": "❌ Finanzas, Educación y Tecnología: pierden 1 ficha activa.",
+        "positivo": "✅ Turismo y Medios se resuelven sin tirar dados."
+    },
+    {
+        "nombre": "22. Incentivo a la Innovación",
+        "descripcion": "El Estado lanza un plan de apoyo a nuevas tecnologías.",
+        "negativo": "❌ Finanzas, Transporte y Turismo: máximo 1 ficha por jugador.",
+        "positivo": "✅ Tecnología y Educación: si dominás el sector, ganás +1 Reputación y +1 Inversión."
+    },
+    {
+        "nombre": "23. Campaña de Medios",
+        "descripcion": "Un escándalo empresarial domina la agenda pública.",
+        "negativo": "❌ Transporte, Educación y Finanzas: si tenés fichas activas, perdés 1 Reputación.",
+        "positivo": "✅ Alimentación y Educación: si invertís 1 ficha y ganás, se transforma directamente en 1 Mercado."
+    },
+    {
+        "nombre": "24. Recorte Presupuestario",
+        "descripcion": "Se ajustan gastos en áreas sociales y de infraestructura.",
+        "negativo": "❌ Educación, Salud y Construcción: máximo 1 ficha por jugador.",
+        "positivo": "✅ Finanzas y Tecnología: si dominás el sector, podés repetir una tirada fallida."
+    },
+    {
+        "nombre": "25. Colapso Energético",
+        "descripcion": "Un apagón masivo afecta servicios críticos.",
+        "negativo": "❌ Energía, Transporte y Medios: las fichas colocadas se pierden.",
+        "positivo": "✅ Alimentación y Salud: si ganan contra el Mercado, obtienen +1 Reputación."
+    },
+    {
+        "nombre": "26. Tormenta Mediática",
+        "descripcion": "Una ola de noticias virales desestabiliza la opinión pública.",
+        "negativo": "❌ Medios, Finanzas y Tecnología: fichas ganadoras no cuentan para dominio.",
+        "positivo": "✅ Educación y Turismo: las fichas que pierden contra el Mercado permanecen activas."
+    },
+    {
+        "nombre": "27. Emergencia Ambiental",
+        "descripcion": "El Estado bloquea sectores contaminantes para frenar el desastre ecológico.",
+        "negativo": "❌ Energía, Construcción y Transporte: no se puede invertir (fichas devueltas).",
+        "positivo": "✅ Salud y Educación: cada jugador puede mover una ficha de otro sector a estos sectores."
+    },
+    {
+        "nombre": "28. Burbuja Inmobiliaria",
+        "descripcion": "El mercado colapsa por sobreinversión sin demanda real.",
+        "negativo": "❌ Construcción, Finanzas y Transporte: fichas colocadas se pierden sin resolver.",
+        "positivo": "✅ Medios y Turismo: si ganan contra el Mercado, obtienen +1 ficha de inversión a la reserva."
+    },
+    {
+        "nombre": "29. Subsidios Focalizados",
+        "descripcion": "El Estado dirige recursos a sectores prioritarios.",
+        "negativo": "❌ Finanzas, Turismo y Medios: las fichas perdidas se eliminan del juego.",
+        "positivo": "✅ Salud y Educación: si dominás el sector, ganás +1 Reputación y +1 Inversión."
+    },
+    {
+        "nombre": "30. Campaña Nacional de Vacunación",
+        "descripcion": "La atención sanitaria se prioriza a nivel nacional.",
+        "negativo": "❌ Construcción, Finanzas y Energía: se retiran todas las fichas colocadas y solo se permite colocar 1 ficha nueva en cualquier sector.",
+        "positivo": "✅ Salud y Alimentación: las fichas perdidas contra el Mercado permanecen activas."
+    },
+    {
+        "nombre": "31. Corrupción Generalizada",
+        "descripcion": "Una red de corrupción altera el orden del juego.",
+        "negativo": "❌ Transporte, Educación y Finanzas: el jugador Mercado redistribuye las fichas colocadas en esos sectores antes de resolver.",
+        "positivo": "✅ Medios y Tecnología: cada jugador puede tirar con +1 contra el Mercado en un sector a elección."
+    },
+    {
+        "nombre": "32. Prohibición Temporal de Exportaciones",
+        "descripcion": "El Estado bloquea ventas al exterior para abastecer el consumo interno.",
+        "negativo": "❌ Turismo, Energía y Alimentación: las fichas que ganan contra el Mercado se mantienen pero no otorgan fichas.",
+        "positivo": "✅ Salud y Construcción: si sos el único en el sector, ganás automáticamente sin tirar."
+    },
+    {
+        "nombre": "33. Reactivación del Consumo Interno",
+        "descripcion": "Un nuevo plan estimula la demanda en sectores nacionales.",
+        "negativo": "❌ Finanzas, Educación y Energía: -1 en todas las tiradas este turno.",
+        "positivo": "✅ Turismo y Alimentación: si ganás, la ficha queda para el próximo turno sin necesidad de reinvertir."
+    },
+    {
+        "nombre": "34. Crisis Climática Global",
+        "descripcion": "Sequías, incendios y tormentas alteran el comercio internacional.",
+        "negativo": "❌ Turismo, Energía y Alimentación: las fichas que ganan contra el Mercado se mantienen pero no otorgan fichas.",
+        "positivo": "✅ Salud y Construcción: si sos el único en el sector, ganás automáticamente sin tirar."
+    },
+    {
+        "nombre": "35. Estímulo al Consumo Interno",
+        "descripcion": "La demanda interna se reactiva con beneficios impositivos y subsidios selectivos.",
+        "negativo": "❌ Finanzas, Educación y Energía: -1 en todas las tiradas este turno.",
+        "positivo": "✅ Turismo y Alimentación: si ganás, la ficha queda para el próximo turno sin necesidad de reinvertir."
+    }
+]

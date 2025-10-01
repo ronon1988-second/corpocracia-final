@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartaContainer = document.getElementById('carta-container');
     const nuevaEmpresaBtn = document.getElementById('nueva-empresa');
     const compartirBtn = document.getElementById('compartir-hibrido');
-    const enlaceContainer = document.getElementById('enlace-container'); // El contenedor para nuestro enlace
+    const enlaceContainer = document.getElementById('enlace-container');
 
     function mostrarEmpresaAleatoria() {
         empresaActual = empresas[Math.floor(Math.random() * empresas.length)];
@@ -40,9 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        enlaceContainer.innerHTML = ''; // Limpiamos enlaces previos antes de intentar de nuevo
+        enlaceContainer.innerHTML = '';
 
-        // PLAN A: Intentar compartir la IMAGEN (Funcionará en Vercel/Móvil)
         html2canvas(cartaElement, { scale: 2, useCORS: true }).then(canvas => {
             canvas.toBlob(blob => {
                 if (!blob) {
@@ -68,17 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // PLAN B: Mostrar un ENLACE para compartir en WhatsApp
     function compartirTextoWhatsApp() {
         console.log("Plan B activado: Mostrando enlace de WhatsApp.");
         const texto = `*Empresa: ${empresaActual.nombre}*\n\n*Actividad:*\n${empresaActual.actividad}\n\n*Detalle:*\n${empresaActual.detalle}`;
         const textoCodificado = encodeURIComponent(texto);
         const url = `https://api.whatsapp.com/send?text=${textoCodificado}`;
         
-        // Creamos y mostramos el enlace en lugar de usar window.open
         enlaceContainer.innerHTML = `<a href="${url}" target="_blank" class="whatsapp-link">¡Listo! Haz clic aquí para compartir en WhatsApp</a>`;
     }
 
-    // Carga inicial
-    mostrarEmpresaAleatoria();
+    // --- Lógica Principal ---
+
+    // 1. Aseguramos que la página empieza limpia.
+    cartaContainer.innerHTML = '';
+    enlaceContainer.innerHTML = '';
+
+    // (No se llama a mostrarEmpresaAleatoria() al cargar la página)
 });

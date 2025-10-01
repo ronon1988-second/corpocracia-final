@@ -89,3 +89,102 @@ body {
 .whatsapp-link:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
+
+/* --- Estilos para las Cartas de Evento --- */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carta-evento {
+    background-color: #FDF5E6; /* Un color papel antiguo */
+    color: #4A3728;
+    border: 1px solid #D2B48C;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-out;
+    text-align: left;
+    max-width: 90%; /* Asegura que no sea demasiado ancha en pantallas grandes */
+}
+
+.carta-evento h2 {
+    font-size: 1.4em;
+    color: #8B5A2B;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #D2B48C; /* Línea divisoria */
+}
+
+.carta-evento p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.evento-descripcion {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.evento-efecto {
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.evento-efecto.positivo {
+    background-color: #E6F4EA; /* Verde muy claro */
+    border-left: 5px solid #5CB85C; /* Borde verde */
+    color: #3D8B3D;
+}
+
+.evento-efecto.negativo {
+    background-color: #FDEDED; /* Rojo muy claro */
+    border-left: 5px solid #D9534F; /* Borde rojo */
+    color: #B94A48;
+}
+
+/* --- Media Query para Diseño Adaptable (Móviles) --- */
+
+@media (max-width: 600px) {
+    body {
+        /* Movemos el contenido hacia arriba en lugar de centrarlo verticalmente */
+        justify-content: flex-start;
+        padding-top: 5vh; /* Un 5% del alto de la pantalla como margen superior */
+    }
+
+    .container {
+        /* Hacemos el contenedor más ancho y con menos padding horizontal */
+        max-width: 90%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo {
+        /* Reducimos el tamaño del logo en móviles */
+        width: 100px;
+    }
+
+    .button {
+        /* Hacemos que los botones se apilen verticalmente */
+        display: block;
+        width: 90%; /* Ancho relativo al contenedor */
+        margin: 15px auto; /* Espaciado vertical y centrado horizontal */
+    }
+
+    .home-button {
+        /* Ajustamos la posición del botón de inicio */
+        top: 15px;
+        left: 15px;
+    }
+}
