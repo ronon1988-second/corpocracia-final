@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         html2canvas(cartaElement, { 
             scale: 2, 
             useCORS: true,
-            backgroundColor: null // Usará el color de fondo definido en el CSS
+            backgroundColor: '#ffffff' // Forzar fondo blanco para legibilidad
         }).then(canvas => {
             canvas.toBlob(blob => {
                 if (!blob) {
