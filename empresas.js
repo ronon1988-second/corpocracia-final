@@ -18,9 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const nuevaEmpresaBtn = document.getElementById('nueva-empresa');
     const compartirBtn = document.getElementById('compartir-hibrido');
     const enlaceContainer = document.getElementById('enlace-container');
+    const hiddenCamera = document.getElementById('hidden-camera');
 
     function mostrarEmpresaAleatoria() {
         empresaActual = empresas[Math.floor(Math.random() * empresas.length)];
+        // Ahora se usa la clase correcta para la tarjeta visible
         cartaContainer.innerHTML = `
             <div class="carta-empresa">
                 <h2>${empresaActual.nombre}</h2>
@@ -34,78 +36,68 @@ document.addEventListener('DOMContentLoaded', () => {
     nuevaEmpresaBtn.addEventListener('click', mostrarEmpresaAleatoria);
 
     compartirBtn.addEventListener('click', () => {
-        const cartaOriginal = cartaContainer.querySelector('.carta-empresa');
-        if (!cartaOriginal || !empresaActual) {
+        if (!empresaActual) {
             alert('Primero debes generar una empresa para poder compartirla.');
             return;
         }
-        generarImagenYCompartir(cartaOriginal);
+        generarImagenYCompartir();
     });
 
-    function generarImagenYCompartir(elemento) {
-        const elementoParaRenderizar = elemento.cloneNode(true);
+    function generarImagenYCompartir() {
+        // 1. Construir la tarjeta en la cámara oculta
+        hiddenCamera.innerHTML = `
+            <div class="carta-para-imagen">
+                <h2>${empresaActual.nombre}</h2>
+                <p>${empresaActual.actividad}</p>
+                <p><strong>Detalle:</strong> ${empresaActual.detalle}</p>
+            </div>
+        `;
+        const elementoParaRenderizar = hiddenCamera.querySelector('.carta-para-imagen');
 
-        Object.assign(elementoParaRenderizar.style, {
-            backgroundColor: '#ffffff',
-            color: '#000000',
-            fontFamily: 'sans-serif',
-            textAlign: 'left',
-            borderRadius: '12px',
-            padding: '16px',
-            width: '320px',
-            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-            position: 'absolute',
-            top: '0',
-            left: '-9999px'
-        });
-
-        const h2 = elementoParaRenderizar.querySelector('h2');
-        if (h2) { Object.assign(h2.style, { color: '#000000', fontSize: '20px', fontWeight: '700', marginBottom: '8px' }); }
-
-        const paragraphs = elementoParaRenderizar.querySelectorAll('p');
-        if (paragraphs) { paragraphs.forEach(p => Object.assign(p.style, { color: '#333333', fontSize: '16px', margin: '4px 0' })); }
-
-        const strong = elementoParaRenderizar.querySelector('strong');
-        if (strong) { strong.style.color = '#000000'; }
-
-        document.body.appendChild(elementoParaRenderizar);
-
+        // 2. Usar html2canvas en el elemento de la cámara oculta
         html2canvas(elementoParaRenderizar, { 
             scale: 2, 
             useCORS: true,
-            backgroundColor: '#ffffff'
+            backgroundColor: '#ffffff' // Forzar fondo blanco
         }).then(canvas => {
-            document.body.removeChild(elementoParaRenderizar);
+            // 3. Limpiar la cámara oculta inmediatamente
+            hiddenCamera.innerHTML = '';
+
             canvas.toBlob(blob => {
                 if (!blob) {
-                    compartirTextoWhatsApp();
+                    console.error('Error: El blob de la imagen es nulo.');
+                    compartirTextoWhatsApp(); // Plan B si falla la creación del blob
                     return;
                 }
-                const file = new File([blob], "corpo-cracia.png", { type: "image/png" });
+                const file = new File([blob], "corpo-cracia-empresa.png", { type: "image/png" });
                 const shareData = { files: [file] };
 
                 if (navigator.canShare && navigator.canShare(shareData)) {
                     navigator.share(shareData).catch(err => {
-                        if (err.name !== 'AbortError') { compartirTextoWhatsApp(); }
+                        if (err.name !== 'AbortError') {
+                            console.error('Error al compartir, pasando a WhatsApp de texto:', err);
+                            compartirTextoWhatsApp();
+                        }
                     });
                 } else {
                     compartirTextoWhatsApp();
                 }
             }, 'image/png');
         }).catch(err => {
-            document.body.removeChild(elementoParaRenderizar);
+            // Limpiar la cámara oculta también si hay un error
+            hiddenCamera.innerHTML = '';
             console.error("Error en html2canvas, pasando a texto:", err);
             compartirTextoWhatsApp();
         });
     }
 
     function compartirTextoWhatsApp() {
-        enlaceContainer.innerHTML = '';
+        enlaceContainer.innerHTML = ''; // Limpiar por si acaso
         if (!empresaActual) return; 
         const texto = `*Empresa: ${empresaActual.nombre}*\n\n*Actividad:*\n${empresaActual.actividad}\n\n*Detalle:*\n${empresaActual.detalle}`;
         const textoCodificado = encodeURIComponent(texto);
         const url = `https://api.whatsapp.com/send?text=${textoCodificado}`;
-        enlaceContainer.innerHTML = `<a href="${url}" target="_blank" class="whatsapp-link">¡Listo! Haz clic aquí para compartir en WhatsApp</a>`;
+        enlaceContainer.innerHTML = `<a href="${url}" target="_blank" class="whatsapp-link">¡Listo! Haz clic para compartir en WhatsApp</a>`;
     }
 
     // --- Lógica Principal ---
