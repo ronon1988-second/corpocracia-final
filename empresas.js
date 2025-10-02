@@ -42,11 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         enlaceContainer.innerHTML = '';
 
-        // Forzamos un fondo sólido para evitar transparencias en la imagen compartida.
         html2canvas(cartaElement, { 
             scale: 2, 
-            useCORS: true, 
-            backgroundColor: '#D2B48C' // Color de fondo consistente con el estilo de la app.
+            useCORS: true,
+            backgroundColor: null // Usará el color de fondo definido en el CSS
         }).then(canvas => {
             canvas.toBlob(blob => {
                 if (!blob) {
