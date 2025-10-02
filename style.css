@@ -97,11 +97,10 @@ body {
     }
 }
 
-/* --- Estilos Unificados para AMBAS Tarjetas --- */
-.carta-evento,
-.carta-empresa {
-    background-color: #FDF5E6; /* Color papel antiguo para ambas */
-    color: #4A3728; /* Color de texto principal para ambas */
+/* --- Estilo para la Tarjeta de Evento --- */
+.carta-evento {
+    background-color: #FDF5E6; /* Color papel antiguo */
+    color: #4A3728; /* Color de texto principal */
     border: 4px solid #D2B48C;
     border-radius: 10px;
     margin-top: 20px;
@@ -110,6 +109,21 @@ body {
     animation: fadeIn 0.5s ease-out;
     text-align: left;
 }
+
+/* --- Nuevo Estilo para la Tarjeta de Empresa --- */
+.carta-empresa {
+    background-color: #ffffff !important; /* Asegura fondo blanco */
+    color: #000000;                       /* Texto bien visible */
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    margin: 20px auto 0; /* Margen superior y centrado horizontal */
+    font-family: sans-serif;
+    animation: fadeIn 0.5s ease-out; /* Mantener la animación */
+    text-align: left; /* Mantener alineación de texto */
+}
+
 
 .carta-evento h2,
 .carta-empresa h2 {
@@ -123,6 +137,8 @@ body {
 
 .carta-empresa h2 { /* Pequeño ajuste para el nombre de empresa */
     font-size: 1.5em;
+    color: #000000; /* Color de título para la nueva tarjeta */
+    border-bottom: none; /* Quitar borde inferior para un look más limpio */
 }
 
 .carta-evento p,
@@ -136,7 +152,7 @@ body {
 }
 
 .carta-empresa p strong { /* Unificar el color del texto en negrita */
-    color: #8B5A2B;
+    color: #000000; /* Usar el mismo color de texto */
 }
 
 .evento-descripcion {
