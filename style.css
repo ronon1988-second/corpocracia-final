@@ -110,7 +110,7 @@ body {
     text-align: left;
 }
 
-/* --- Nuevo Estilo para la Tarjeta de Empresa --- */
+/* --- Nuevo Estilo para la Tarjeta de Empresa (en pantalla) --- */
 .carta-empresa {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -217,33 +217,37 @@ body {
     }
 }
 
-/* --- Estilo para la "Cámara Oculta" --- */
+/* --- Estilo para la "Cámara Oculta" (IMAGEN GENERADA) --- */
 .carta-para-imagen {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    font-family: sans-serif;
+    background-color: #FDF5E6 !important; /* Color papel antiguo */
+    color: #4A3728 !important; /* Color de texto principal */
+    font-family: 'Lato', sans-serif;
     text-align: left;
-    border-radius: 12px;
-    padding: 16px;
-    width: 320px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 4px solid #D2B48C; /* Borde de carta */
 }
 
 .carta-para-imagen h2 {
-    font-size: 20px;
+    font-size: 1.4em;
     font-weight: 700;
-    color: #000000 !important;
-    margin-bottom: 8px;
+    color: #8B5A2B !important; /* Color título café */
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
     border: none !important;
-    padding: 0 !important;
+    border-bottom: 2px solid #D2B48C !important; /* Línea divisoria */
 }
 
 .carta-para-imagen p {
     font-size: 16px;
-    color: #333333 !important;
-    margin: 4px 0;
+    color: #4A3728 !important;
+    margin: 10px 0;
+    line-height: 1.6;
 }
 
 .carta-para-imagen strong {
-    color: #000000 !important;
+    color: #4A3728 !important;
 }
